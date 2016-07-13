@@ -10,6 +10,12 @@ MEMBASE := 0x20000000
 ARCH := arm
 ARM_CPU := cortex-m0
 
+ifeq ($(STM32_CHIP),stm32f031x4)
+# Note: CMSIS uses x6 define for both x4 and x6.
+GLOBAL_DEFINES += \
+        STM32F031x6
+MEMSIZE ?= 4096
+endif
 ifeq ($(STM32_CHIP),stm32f072_x8)
 GLOBAL_DEFINES += \
         STM32F072
@@ -25,8 +31,11 @@ GLOBAL_DEFINES += \
 	USE_STDPERIPH_DRIVER \
 	MEMSIZE=$(MEMSIZE)
 
+# XXX: selectively compile.
+#	$(LOCAL_DIR)/can.c
+#	$(LOCAL_DIR)/usbc.c \
+
 MODULE_SRCS += \
-	$(LOCAL_DIR)/can.c \
 	$(LOCAL_DIR)/debug.c \
 	$(LOCAL_DIR)/dma.c \
 	$(LOCAL_DIR)/gpio.c \
@@ -35,7 +44,6 @@ MODULE_SRCS += \
 	$(LOCAL_DIR)/spi.c \
 	$(LOCAL_DIR)/timer.c \
 	$(LOCAL_DIR)/uart.c \
-	$(LOCAL_DIR)/usbc.c \
 	$(LOCAL_DIR)/vectab.c
 
 # use a two segment memory layout, where all of the read-only sections 
@@ -46,11 +54,12 @@ MODULE_SRCS += \
 LINKER_SCRIPT += \
 	$(BUILDDIR)/system-twosegment.ld
 
+# XXX: shouldn't the first two reference external/platform?
+#	dev/usb
 MODULE_DEPS += \
 	platform/stm32f0xx/CMSIS \
 	platform/stm32f0xx/STM32F0xx_HAL_Driver \
 	arch/arm/arm-m/systick \
-	dev/usb \
 	lib/cbuf
 
 include make/module.mk

@@ -124,7 +124,7 @@ EXTRA_LINKER_SCRIPTS :=
 BUILDID ?=
 
 # comment out or override if you want to see the full output of each command
-NOECHO ?= @
+#NOECHO ?= @
 
 # try to include the project file
 -include project/$(PROJECT).mk

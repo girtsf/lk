@@ -66,12 +66,15 @@ static stm32_gpio_t *stm32_gpio_port_to_pointer(unsigned int port)
             return GPIOB;
         case GPIO_PORT_C:
             return GPIOC;
+            // XXX(girts): make conditional.
+#if 0
         case GPIO_PORT_D:
             return GPIOD;
         case GPIO_PORT_E:
             return GPIOE;
         case GPIO_PORT_F:
             return GPIOF;
+#endif
     }
 }
 

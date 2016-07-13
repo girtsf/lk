@@ -72,9 +72,15 @@
 #endif /* STM32F0 */
 
 /* Fix up lk defines to CMSIS defines. */
+
 #ifdef STM32F072
 #define STM32F072xB
 #endif
+
+#ifdef STM32F031X6
+#define STM32F031x6
+#endif
+
 
 /* Uncomment the line below according to the target STM32 device used in your
    application 

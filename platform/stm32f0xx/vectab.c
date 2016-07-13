@@ -85,7 +85,7 @@ const void *const __SECTION(".text.boot.vectab2") vectab2[] = {
     VECTAB_ENTRY(EXTI0_1_IRQ),          // EXTI Line 0 and 1 Interrupts
     VECTAB_ENTRY(EXTI2_3_IRQ),          // EXTI Line 2 and 3 Interrupts
     VECTAB_ENTRY(EXTI4_15_IRQ),         // EXTI Line 4 to 15 Interrupts
-    VECTAB_ENTRY(TSC_IRQ),                   // Touch sense controller Interrupt
+    // VECTAB_ENTRY(TSC_IRQ),                   // Touch sense controller Interrupt
     VECTAB_ENTRY(DMA1_Channel1_IRQ),    // DMA1 Channel 1 Interrupt
     VECTAB_ENTRY(DMA1_Channel2_3_IRQ),  // DMA1 Channel 2 and Channel 3 Interrupts
     VECTAB_ENTRY(DMA1_Channel4_5_6_7_IRQ),  // DMA1 Channels 4-7 Interrupts
@@ -94,19 +94,19 @@ const void *const __SECTION(".text.boot.vectab2") vectab2[] = {
     VECTAB_ENTRY(TIM1_CC_IRQ),          // TIM1 Capture Compare Interrupt
     VECTAB_ENTRY(TIM2_IRQ),                 // TIM2 Interrupt
     VECTAB_ENTRY(TIM3_IRQ),                 // TIM3 Interrupt
-    VECTAB_ENTRY(TIM6_DAC_IRQ),         // TIM6 and DAC Interrupts
-    VECTAB_ENTRY(TIM7_IRQ),                 // TIM7 Interrupts
+    // VECTAB_ENTRY(TIM6_DAC_IRQ),         // TIM6 and DAC Interrupts
+    // VECTAB_ENTRY(TIM7_IRQ),                 // TIM7 Interrupts
     VECTAB_ENTRY(TIM14_IRQ),            // TIM14 Interrupt
-    VECTAB_ENTRY(TIM15_IRQ),            // TIM15 Interrupt
+    // VECTAB_ENTRY(TIM15_IRQ),            // TIM15 Interrupt
     VECTAB_ENTRY(TIM16_IRQ),            // TIM16 Interrupt
     VECTAB_ENTRY(TIM17_IRQ),            // TIM17 Interrupt
     VECTAB_ENTRY(I2C1_IRQ),                 // I2C1 Interrupt
-    VECTAB_ENTRY(I2C2_IRQ),                 // I2C2 Interrupt
+    // VECTAB_ENTRY(I2C2_IRQ),                 // I2C2 Interrupt
     VECTAB_ENTRY(SPI1_IRQ),                 // SPI1 Interrupt
-    VECTAB_ENTRY(SPI2_IRQ),                 // SPI2 Interrupt
+    // VECTAB_ENTRY(SPI2_IRQ),                 // SPI2 Interrupt
     VECTAB_ENTRY(USART1_IRQ),               // USART1 Interrupt
-    VECTAB_ENTRY(USART2_IRQ),           // USART2 Interrupt
-    VECTAB_ENTRY(USART3_4_IRQ),         // USART3 and USART4 Interrupts
-    VECTAB_ENTRY(CEC_CAN_IRQ),              // CEC Interrupt
-    VECTAB_ENTRY(USB_IRQ),                  // USB Low Priority global Interrupt
+    // VECTAB_ENTRY(USART2_IRQ),           // USART2 Interrupt
+    // VECTAB_ENTRY(USART3_4_IRQ),         // USART3 and USART4 Interrupts
+    // VECTAB_ENTRY(CEC_CAN_IRQ),              // CEC Interrupt
+    // VECTAB_ENTRY(USB_IRQ),                  // USB Low Priority global Interrupt
 };
