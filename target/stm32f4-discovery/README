@@ -13,6 +13,14 @@ LK Debug/Console UART
 - RX is A3
 - both are on the P1 header near the top
 
+Using ST-LINK VCP serial
+------------------------
+
+The onboard ST-LINK/V2 has a Virtual Com Port that is available over USB.
+To use it, solder wires between:
+- U2 pin 12 (ST-LINK_TX) and PA3 (USART2_RX) (e.g., pin 13 on header P1)
+- U2 pin 13 (ST-LINK_RX) and PA2 (USART2_TX) (e.g., pin 14 on header P1)
+And use UART2.
 
 Using external SWD debug
 ------------------------
