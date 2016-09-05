@@ -44,6 +44,9 @@ static const gpio_i2c_info_t _name = {         \
     .qcd            = ((_clk_ticks + 3) >> 2), \
 }
 
+// Adds a new I2C bus.
+//   bus_id must be < GPIO_I2C_BUS_COUNT.
+//   info must remain alive.
 void gpio_i2c_add_bus(uint32_t bus_id, const gpio_i2c_info_t *info);
 
 void gpio_i2c_init_early(void);
