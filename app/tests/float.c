@@ -78,14 +78,18 @@ static void arm_float_instruction_trap_test(void)
 
 #if !ARM_ONLY_THUMB
     float_vfp_arm_instruction_test();
+#if ARM_WITH_NEON
     float_neon_arm_instruction_test();
-#endif
+#endif  // ARM_WITH_NEON
+#endif  // !ARM_ONLY_THUMB
     float_vfp_thumb_instruction_test();
+#if ARM_WITH_NEON
     float_neon_thumb_instruction_test();
+#endif  // ARM_WITH_NEON
 
     printf("if we got here, we probably decoded everything properly\n");
 }
-#endif
+#endif  // if ARCH_ARM && !ARM_ISA_ARMV7M
 
 static void float_tests(void)
 {
@@ -101,6 +105,9 @@ static void float_tests(void)
         char name[32];
         snprintf(name, sizeof(name), "float %u", i);
         t[i] = thread_create(name, &float_thread, &val[i], LOW_PRIORITY, DEFAULT_STACK_SIZE);
+        if (t[i] == NULL) {
+            panic("failed to create a thread");
+        }
         thread_resume(t[i]);
     }
 
